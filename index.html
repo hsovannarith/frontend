@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Univeristy</title>
+</head>
+<body class="scroll-hidden bg-gray-50">
+    <nav class="bg-white border-gray-200">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="" class="flex items-center space-x-3 ">
+                <img src="./img/rupp.png" alt="" class="h-16">
+                <div class="flex flex-col text-left items-start text-red-800">
+                    <span class="text-2xl font-semibold whitespace-nowrap ">Department</span>
+                    <span class="text-1.5xl font-semibold whitespace-nowrap ">Computer Science</span>
+                </div>
+            </a>
+
+            <div class="flex items-center md:order-2 space-x-1 md:space-x-0">
+                <div class="border-r-1 pr-4 cursor-pointer border-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                </div>
+                <button type="button" data-dropdown-toggle="language-dropdown-menu"
+                    class=" inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100">
+                    <img src="./img/us.png" alt="" class="h-5 w-5 me-2">
+                    <span class="hidden lg:block">English (US)</span>
+                </button>
+                <!-- Dropdown -->
+                <div
+                    class="absolute left-0 mt-2 z-50 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-12 lg:w-36"
+                    id="language-dropdown-menu">
+                    <ul class="py-2 font-medium" role="none">
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">
+                                <div class="inline-flex items-center">
+                                    <img src="./img/us.png" alt="" class="h-4 w-4 me-2">
+                                    <span class="hidden lg:block">English (US)</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">
+                                <div class="inline-flex items-center">
+                                    <img src="./img/kh.png" alt="" class="h-4 w-4 me-2">
+                                    <span class="hidden lg:block">Khmer</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button data-collapse-toggle="navbar-language" type="button"
+                    class="cursor-pointer inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+                    aria-controls="navbar-language" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
+                <ul
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+                    <li>
+                        <a href="index.html"
+                            class="block py-2 px-3 text-white bg-red-700 rounded-sm md:bg-transparent md:text-red-700 md:p-0 "
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-red-100 md:hover:bg-transparent md:hover:text-red-700
+                                ">Academics</a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-red-100 md:hover:bg-transparent md:hover:text-red-700
+                                ">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-red-100 md:hover:bg-transparent md:hover:text-red-700
+                                ">Contact</a>
+                    </li>
+                    <li>
+                        <a href="faq.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-red-100 md:hover:bg-transparent md:hover:text-red-700
+                                ">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="default-carousel" class="relative w-full">
+        <!-- Carousel wrapper -->
+        <div class="relative w-full h-screen overflow-hidden">
+            <!-- Item 1 -->
+            <div data-carousel-item
+                class="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-30 before:z-10">
+
+                <img src="./img/univ1.jpg" alt="Banner Image" class="absolute inset-0 w-full h-screen object-cover" />
+                <div
+                    class="min-h-screen relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-start items-center text-center text-white p-6 pt-44">
+                    <h2 class="sm:text-4xl text-2xl font-bold mb-6 mt-24">Explore the World</h2>
+                    <p class="sm:text-lg text-base text-center text-gray-200">Embark on unforgettable journeys. Book your
+                        dream
+                        vacation today!</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div data-carousel-item
+                class="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-30 before:z-10">
+
+                <img src="./img/univ2.jpg" alt="Banner Image" class="absolute inset-0 w-full h-screen object-cover" />
+                <div
+                    class="min-h-screen relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-start items-center text-center text-white p-6 pt-44">
+                    <h2 class="sm:text-4xl text-2xl font-bold mb-6 mt-24">Explore the World</h2>
+                    <p class="sm:text-lg text-base text-center text-gray-200">Embark on unforgettable journeys. Book your
+                        dream
+                        vacation today!</p>
+                </div>
+            </div>
+
+
+            <div data-carousel-item
+                class="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-30 before:z-10">
+
+                <img src="./img/univ3.jpg" alt="Banner Image" class="absolute inset-0 w-full h-screen object-cover" />
+                <div
+                    class="min-h-screen relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-start items-center text-center text-white p-6 pt-44">
+                    <h2 class="sm:text-4xl text-2xl font-bold mb-6 mt-24">Explore the World</h2>
+                    <p class="sm:text-lg text-base text-center text-gray-200">Embark on unforgettable journeys. Book your
+                        dream
+                        vacation today!</p>
+                </div>
+            </div>
+
+            <div data-carousel-item
+                class="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-30 before:z-10">
+
+                <img src="./img/univ4.jpg" alt="Banner Image" class="absolute inset-0 w-full h-screen object-cover" />
+                <div
+                    class="min-h-screen relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-start items-center text-center text-white p-6 pt-44">
+                    <h2 class="sm:text-4xl text-2xl font-bold mb-6 mt-24">Explore the World</h2>
+                    <p class="sm:text-lg text-base text-center text-gray-200">Embark on unforgettable journeys. Book your
+                        dream
+                        vacation today!</p>
+                </div>
+            </div>
+
+            <div data-carousel-item
+                class="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-30 before:z-10">
+
+                <img src="./img/univ5.jpg" alt="Banner Image" class="absolute inset-0 w-full h-screen object-cover" />
+                <div
+                    class="min-h-screen relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-start items-center text-center text-white p-6 pt-44">
+                    <h2 class="sm:text-4xl text-2xl font-bold mb-6 mt-24">Explore the World</h2>
+                    <p class="sm:text-lg text-base text-center text-gray-200">Embark on unforgettable journeys. Book your
+                        dream
+                        vacation today!</p>
+                </div>
+            </div>
+        </div>
+        <!-- Slider controls -->
+        <button type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-8 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50  group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 1 1 5l4 4" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-8 cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50  group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    <section class="container bg-gray-50 mx-auto py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+            <div class="shadow-md hover:shadow-lg duration-300 p-6 rounded-md bg-slate-50">
+                <div class="flex items-start gap-4">
+                    <div class="border rounded-full p-4 border-slate-800 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">
+                            Innovation Courses
+                        </h3>
+                        <p class="text-lg text-gray-600">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Eveniet voluptatem quidem natus, odit odio deserunt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-md hover:shadow-lg duration-300 p-6 rounded-md bg-slate-50">
+                <div class="flex items-start gap-4">
+                    <div class="border rounded-full p-4 border-slate-800 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">
+                            Top Instructors
+                        </h3>
+                        <p class="text-lg text-gray-600">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Eveniet voluptatem quidem natus, odit odio deserunt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-md hover:shadow-lg duration-300 p-6 rounded-md bg-slate-50">
+                <div class="flex items-start gap-4">
+                    <div class="border rounded-full p-4 border-slate-800 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">
+                            Online Education
+                        </h3>
+                        <p class="text-lg text-gray-600">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Eveniet voluptatem quidem natus, odit odio deserunt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="bg-gray-50 text-gray-800">
+        <!-- Event List Section -->
+        <section class="container mx-auto py-10">
+            <h2 class="text-2xl font-semibold mb-4 pl-4">UPCOMING EVENT</h2>
+            <p class="text-base font-sans mb-4 px-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate necessitatibus expedita repudiandae distinctio dignissimos odio, aut voluptatem sapiente recusandae, provident eius rerum aperiam modi ipsum molestias. Soluta perspiciatis omnis consequuntur?</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Event 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="h-64 bg-cover bg-center rounded-lg mb-4"
+                        style="background-image: url('./img/event-image-1.jpg')"></div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Guest Lecture on Artificial Intelligence
+                    </h3>
+                    <p class="text-gray-600 mb-4 flex items-center">
+                        <!-- Calendar Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600 mr-2" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M6 2a1 1 0 011 1V4h6V3a1 1 0 112 0V4h2a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h2V3a1 1 0 011-1zM4 6v12h12V6H4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        February 25, 2025 | 2:00 PM - 4:00 PM
+                    </p>
+                    <p class="text-gray-600 mb-4">Room 101, Science Building</p>
+                    <p class="text-gray-800">
+                        Join Dr. John Smith as he discusses the future of AI in education.
+                    </p>
+                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-full">
+                        Register Now
+                    </button>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="h-64 bg-cover bg-center rounded-lg mb-4"
+                        style="background-image: url('./img/event-image-2.jpg')"></div>
+                    <h3 class="text-xl font-semibold mb-2">Basketball Tournament</h3>
+                    <p class="text-gray-600 mb-4 flex items-center">
+                        <!-- Calendar Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600 mr-2" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M6 2a1 1 0 011 1V4h6V3a1 1 0 112 0V4h2a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h2V3a1 1 0 011-1zM4 6v12h12V6H4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        March 3, 2025 | 10:00 AM - 3:00 PM
+                    </p>
+                    <p class="text-gray-600 mb-4">Sports Hall</p>
+                    <p class="text-gray-800">
+                        Annual university tournament for basketball teams. Come cheer for
+                        your teams!
+                    </p>
+                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-full">
+                        Register Now
+                    </button>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="h-64 bg-cover bg-center rounded-lg mb-4"
+                        style="background-image: url('./img/event-image-3.jpg')"></div>
+                    <h3 class="text-xl font-semibold mb-2">Cultural Festival</h3>
+                    <p class="text-gray-600 mb-4 flex items-center">
+                        <!-- Calendar Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600 mr-2" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M6 2a1 1 0 011 1V4h6V3a1 1 0 112 0V4h2a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h2V3a1 1 0 011-1zM4 6v12h12V6H4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        March 10, 2025 | 12:00 PM - 6:00 PM
+                    </p>
+                    <p class="text-gray-600 mb-4">Main Quad</p>
+                    <p class="text-gray-800">
+                        Performances, food stalls, and live music for a fun-filled day of
+                        culture.
+                    </p>
+                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-full">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="py-2 bg-gray-50 mb-8">
+        <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                    Curriculum
+                </h2>
+            </div>
+            <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
+                <div
+                    class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                    <button type="button" id="question2" data-state="closed"
+                        class="flex items-center justify-between w-full px-4 py-2 sm:p-6">
+                        <span class="flex text-lg font-semibold text-black">Year One</span>
+                        <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" class="w-6 h-6 text-gray-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="answer1" style="display:none" class=" pb-5 sm:pb-6">
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500 ">
+                            <thead class="text-lg text-white font-bold bg-red-800">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Semester 1
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Credits
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="relative overflow-x-auto mt-4">
+                        <table class="w-full text-sm text-left text-gray-500 ">
+                            <thead class="text-lg text-white font-bold bg-red-800">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Semester 2
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Credits
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div
+                    class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                    <button type="button" id="question2" data-state="closed"
+                        class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                        <span class="flex text-lg font-semibold text-black">Year Two</span>
+                        <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" class="w-6 h-6 text-gray-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="answer2" style="display:none" class=" pb-5 sm:pb-6">
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500 ">
+                            <thead class="text-lg text-white font-bold bg-red-800">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Semester 1
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Credits
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="relative overflow-x-auto mt-4">
+                        <table class="w-full text-sm text-left text-gray-500 ">
+                            <thead class="text-lg text-white font-bold bg-red-800">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Semester 2
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Credits
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div
+                    class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                    <button type="button" id="question2" data-state="closed"
+                        class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                        <span class="flex text-lg font-semibold text-black">Year Three</span>
+                        <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" class="w-6 h-6 text-gray-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="answer3" style="display:none" class=" pb-5 sm:pb-6">
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500 ">
+                            <thead class="text-lg text-white font-bold bg-red-800">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Semester 1
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Credits
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="relative overflow-x-auto mt-4">
+                        <table class="w-full text-sm text-left text-gray-500 ">
+                            <thead class="text-lg text-white font-bold bg-red-800">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Semester 2
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Credits
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div
+                    class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                    <button type="button" id="question2" data-state="closed"
+                        class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                        <span class="flex text-lg font-semibold text-black">Year Four</span>
+                        <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" class="w-6 h-6 text-gray-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="answer4" style="display:none" class=" pb-5 sm:pb-6">
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500 ">
+                            <thead class="text-lg text-white font-bold bg-red-800">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Semester 1
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Credits
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="relative overflow-x-auto mt-4">
+                        <table class="w-full text-sm text-left text-gray-500 ">
+                            <thead class="text-lg text-white font-bold bg-red-800">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Semester 2
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 border">
+                                        Credits
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border border-gray-200">
+                                        Apple MacBook Pro 17"
+                                    </th>
+                                    <td class="px-6 py-4 border border-gray-200">
+                                        $2999
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-red-900 text-gray-200">
+        <div class="container mx-auto py-14 px-6">
+            <div class="grid md:grid-cols-12 grid-cols-1 gap-7">
+                <div class="lg:col-span-4 col-span-12">
+                    <a href="/" style="display: flex; align-items: center">
+                        <img class="h-12" src="./img/rupp.png" alt="RUPP Logo" />
+                        <span style="font-size: 24px; font-weight: bold; margin-left: 10px">RUPP</span>
+                    </a>
+                    <p class="mt-6">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Voluptatum illo rem eum architecto magni aperiam maxime, accusamus
+                        corporis unde laborum.
+                    </p>
+                    <br />
+                    <ul class="flex space-x-6">
+                        <li>
+                            <a href="#" class="text-blue-500 hover:text-blue-700 transition-all duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22.675 0H1.325C.593 0 0 .593 0 1.326V22.67c0 .733.593 1.326 1.325 1.326H12.82V14.79h-3.12v-3.634h3.12V8.405c0-3.1 1.893-4.785 4.66-4.785 1.325 0 2.463.099 2.796.142v3.244h-1.918c-1.504 0-1.796.715-1.796 1.76v2.31h3.59l-.467 3.634h-3.123V24h6.126c.733 0 1.325-.593 1.325-1.325V1.326C24 .593 23.408 0 22.675 0z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sky-400 hover:text-sky-600 transition-all duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.954 4.57a10.016 10.016 0 01-2.825.775 4.958 4.958 0 002.163-2.723 9.963 9.963 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482A13.975 13.975 0 011.67 3.149a4.917 4.917 0 001.523 6.573 4.902 4.902 0 01-2.229-.616v.061a4.923 4.923 0 003.946 4.827 4.904 4.904 0 01-2.224.085 4.923 4.923 0 004.6 3.417 9.866 9.866 0 01-6.102 2.104c-.395 0-.779-.023-1.16-.067a13.92 13.92 0 007.557 2.212c9.054 0 14.007-7.496 14.007-13.986 0-.21-.004-.423-.014-.633A9.935 9.935 0 0024 4.59a9.864 9.864 0 01-2.845.775 4.916 4.916 0 002.163-2.723z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-pink-500 hover:text-pink-700 transition-all duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.69 4.917 4.917.058 1.266.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.146 3.225-1.665 4.771-4.917 4.917-1.266.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-3.225-.146-4.771-1.69-4.917-4.917C2.174 15.583 2.162 15.204 2.162 12s.012-3.584.07-4.85c.146-3.225 1.69-4.771 4.917-4.917C8.417 2.174 8.796 2.162 12 2.162zm0-2.163C8.741 0 8.332.014 7.052.072 2.908.254.254 2.908.072 7.052.014 8.332 0 8.741 0 12s.014 3.668.072 4.948C.254 21.092 2.908 23.746 7.052 23.928 8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c4.144-.182 6.798-2.836 6.98-6.98.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.182-4.144-2.836-6.798-6.98-6.98C15.668.014 15.259 0 12 0z" />
+                                    <path
+                                        d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zM18.406 4.594a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-red-500 hover:text-red-700 transition-all duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.5 6.5a3.03 3.03 0 00-2.16-2.14C19.37 4 12 4 12 4s-7.37 0-9.34.36A3.03 3.03 0 00.5 6.5 31.5 31.5 0 000 12s0 5.5.36 7.34a3.03 3.03 0 002.14 2.16C4.63 20 12 20 12 20s7.37 0 9.34-.36a3.03 3.03 0 002.16-2.16C24 17.5 24 12 24 12s0-5.5-.36-7.34zM9.75 15.75v-7.5l6.5 3.75-6.5 3.75z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3 md:col-span-4 col-span-12">
+                    <h5 class="tracking-wide text-gray-100 font-semibold">
+                        Get in Touch
+                    </h5>
+                    <ul class="list-none mt-6 space-y-2">
+                        <li>
+                            <a href="#"
+                                class="text-gray-200  transition-all duration-500 ease-in-out">800 388 80
+                                90</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-200  transition-all duration-500 ease-in-out">3310
+                                Barnes Avenue Cicinati,<br />
+                                Ohio 45244
+                            </a>
+                        </li>
+                        <button class="text-gray-200 border p-2">Get Directions</button>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2 md:col-span-4 col-span-12">
+                    <h5 class="tracking-wide text-gray-200 font-semibold">About</h5>
+                    <ul class="list-none mt-6 space-y-2">
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">About
+                                Us</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">Courses
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">News
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">Events
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3 md:col-span-6 col-span-12">
+                    <h5 class="tracking-wide text-gray-100 font-semibold">Links</h5>
+                    <ul class="list-none mt-6 space-y-2">
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">Students
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">Faculty &
+                                Staffs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">Alumni
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">Vistit
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="text-gray-200 transition-all duration-500 ease-in-out">Media
+                                Relations
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white">
+            <div class="md:text-center container mx-auto py-7 px-6">
+                <p class="mb-0">
+                    &copy,
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    RUPP, All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Languages Dropdown Toggle
+        const dropdownToggle = document.querySelector("[data-dropdown-toggle='language-dropdown-menu']");
+        const dropdownMenu = document.getElementById("language-dropdown-menu");
+
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener("click", function () {
+                dropdownMenu.classList.toggle("hidden");
+
+                const rect = dropdownToggle.getBoundingClientRect();
+                dropdownMenu.style.top = `${rect.bottom + window.scrollY}px`;
+                dropdownMenu.style.left = `${rect.left + window.scrollX}px`;
+            });
+
+            // Close dropdown if clicking outside
+            document.addEventListener("click", function (event) {
+                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.add("hidden");
+                }
+            });
+        }
+
+        // Academics Dropdown Toggle
+        const academicsToggle = document.getElementById("dropdownNavbarLink");
+        const academicsMenu = document.getElementById("dropdownNavbar");
+
+        if (academicsToggle && academicsMenu) {
+            academicsToggle.addEventListener("click", function (event) {
+                event.stopPropagation();
+                academicsMenu.classList.toggle("hidden");
+                // window.body.style.background = "black";
+            });
+
+            // Close dropdown if clicking outside
+            document.addEventListener("click", function (event) {
+                if (!academicsToggle.contains(event.target) && !academicsMenu.contains(event.target)) {
+                    academicsMenu.classList.add("hidden");
+                }
+            });
+        }
+
+        // Mobile Menu Toggle (Fix for Small Screens)
+        const mobileMenuToggle = document.querySelector("[data-collapse-toggle='navbar-language']");
+        const mobileMenu = document.getElementById("navbar-language");
+        const navbar = document.querySelector("nav");
+
+        // Create overlay element
+        const overlay = document.createElement("div");
+        overlay.classList.add("fixed", "inset-0", "bg-black", "opacity-90", "hidden", "z-40");
+        document.body.appendChild(overlay);
+
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener("click", function () {
+                mobileMenu.classList.toggle("hidden");
+                overlay.classList.toggle("hidden");
+                navbar.classList.toggle("relative");
+                navbar.classList.toggle("z-50");
+                mobileMenu.classList.toggle("z-50");
+            });
+
+            // Close menu and overlay when clicking outside
+            overlay.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                overlay.classList.add("hidden");
+                navbar.classList.remove("relative", "z-50");
+                mobileMenu.classList.remove("z-50");
+            });
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.getElementById("default-carousel");
+        const items = carousel.querySelectorAll("[data-carousel-item]");
+        const totalItems = items.length;
+        let currentIndex = 0;
+        let interval;
+
+        function showSlide(index) {
+            items.forEach((item, i) => {
+                item.classList.add("hidden"); // Hide all slides
+                item.classList.remove("opacity-100", "scale-100", "duration-900", "ease-in-out");
+            });
+
+            items[index].classList.remove("hidden"); // Show current slide
+            items[index].classList.add("opacity-100", "scale-100", "duration-900", "ease-in-out");
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            showSlide(currentIndex);
+        }
+
+        function startAutoSlide() {
+            interval = setInterval(nextSlide, 3000); // Auto-slide every 3 seconds
+        }
+
+        function stopAutoSlide() {
+            clearInterval(interval);
+        }
+
+        // Initialize first slide
+        showSlide(currentIndex);
+        startAutoSlide();
+
+        const nextButton = carousel.querySelector("[data-carousel-next]");
+        const prevButton = carousel.querySelector("[data-carousel-prev]");
+
+        if (nextButton && prevButton) {
+            nextButton.addEventListener("click", function () {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+
+            prevButton.addEventListener("click", function () {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+        }
+    });
+
+    document.querySelectorAll('[id^="question"]').forEach(function (button, index) {
+        button.addEventListener('click', function () {
+            var answer = document.getElementById('answer' + (index + 1));
+            var arrow = document.getElementById('arrow' + (index + 1));
+
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                answer.style.display = 'none';
+                arrow.style.transform = 'rotate(-180deg)';
+            }
+        });
+    });
+</script>
+</html>
