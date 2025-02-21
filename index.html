@@ -1143,11 +1143,10 @@
                     event.stopPropagation(); // Prevents immediate closing
                     academicsSubmenu.classList.toggle("hidden");
 
-                    // Ensure submenu is above everything
                     academicsSubmenu.style.zIndex = "999";
                 });
 
-                // Close submenu when clicking outside
+                // Close submenu
                 document.addEventListener("click", function (event) {
                     if (!academicsToggle.contains(event.target) && !academicsSubmenu.contains(event.target)) {
                         academicsSubmenu.classList.add("hidden");
@@ -1156,23 +1155,5 @@
             }
         });
 
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     const academicsToggle = document.getElementById("academics-toggle");
-    //     const academicsSubmenu = document.getElementById("academics-submenu");
-
-    //     if (academicsToggle && academicsSubmenu) {
-    //         academicsToggle.addEventListener("click", function (event) {
-    //             event.stopPropagation(); // Prevents immediate closing
-    //             academicsSubmenu.classList.toggle("hidden");
-    //         });
-
-    //         // Close submenu when clicking outside
-    //         document.addEventListener("click", function (event) {
-    //             if (!academicsToggle.contains(event.target) && !academicsSubmenu.contains(event.target)) {
-    //                 academicsSubmenu.classList.add("hidden");
-    //             }
-    //         });
-    //     }
-    // });
 </script>
 </html>

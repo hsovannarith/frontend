@@ -9,12 +9,12 @@
 <body>
     <nav class="bg-white border-gray-200">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 sm:p-4">
-            <a href="" class="flex items-center space-x-3 ">
-                <img src="./img/rupp.png" alt="" class="h-12 md:h-16">
-                <div class="flex flex-col text-left items-start text-red-800">
-                    <span class="text-sm md:text-xl xl:text-2xl xl:font-semibold whitespace-nowrap">Faculty of
+            <a href="" class="flex items-center space-x-3 mt-1 md:mt-0">
+                <img src="./img/rupp.png" alt="" class="h-10 sm:h-12 md:h-16">
+                <div class="flex flex-col text-left items-start text-red-800 uppercase">
+                    <span class="text-xs sm:text-sm md:text-base sm:font-semibold whitespace-nowrap">Faculty of
                         Science</span>
-                    <span class="text-sm md:text-xl xl:text-2xl xl:font-semibold whitespace-nowrap">Department of Computer
+                    <span class="text-xs sm:text-sm md:text-base sm:font-semibold whitespace-nowrap">Department of Computer
                         Science</span>
                 </div>
             </a>
@@ -67,55 +67,96 @@
                 </button>
             </div>
 
-            <!-- Search Popup -->
-            <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-100 hidden z-50"
-                id="search-popup">
-                <div class="bg-white p-4 rounded-lg shadow-lg w-[300px] md:w-full max-w-md relative">
-                    <!-- Close Button (X) -->
-                    <button class="absolute top-2 right-2 text-gray-600 hover:text-gray-800" id="close-search">
-
-                    </button>
-
-                    <!-- Search Form -->
-                    <form role="search" method="get" class="relative" action="">
-                        <input type="search" id="search-form"
-                            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-                            placeholder="Type and press enter" value="" name="s" />
-                        <button type="submit" class="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-700">
-                            <svg class="w-6 h-6 text-red-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <!-- Search Fields -->
+            <div id="search-bar"
+                class="w-full bg-red-900 p-4 hidden transition-all duration-300 ease-in-out absolute top-0 left-0 z-50">
+                <div class="max-w-screen-xl mx-auto flex items-center justify-between">
+                    <!-- Search Input -->
+                    <div class="flex items-center bg-white rounded-full px-4 mx-auto py-2 w-full max-w-2xl">
+                        <input type="text" id="search-input" class="w-full px-2 py-2 outline-none text-gray-900"
+                            placeholder="Search...">
+                        <button class="text-gray-500 hover:text-gray-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                             </svg>
                         </button>
-                    </form>
+                    </div>
+
+                    <!-- Close Button -->
+                    <button id="close-search" class="text-white ml-4 hover:text-gray-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
             </div>
 
-            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto md:order-1" id="navbar-language">
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto md:order-1 uppercase"
+                id="navbar-language">
                 <ul
-                    class="flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-100 uppercase rounded-lg bg-gray-50 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white ">
+                    class="flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-100 uppercase rounded-lg bg-gray-50 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white">
                     <li>
                         <a href="index.html"
-                            class="block py-2 px-3 text-white bg-red-700 rounded-sm lg:bg-transparent lg:text-red-700 lg:p-0 "
+                            class="block py-2 px-3 text-white bg-red-700 rounded-sm lg:bg-transparent lg:text-red-700 lg:p-0"
                             aria-current="page">Home</a>
                     </li>
+
+                    <!-- Academics with dropdown -->
+                    <li class="relative">
+                        <button id="academics-toggle"
+                            class="flex justify-between items-center w-full py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700 z-50"
+                            style="text-transform: uppercase;">
+                            Academics
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4 ml-1 transition-transform duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+
+                        <!-- Submenu -->
+                        <ul id="academics-submenu" class="hidden flex mt-2 flex-col lg:border lg:border-gray-200 lg:shadow-lg lg:rounded-md transition-all duration-300
+                                lg:absolute lg:left-0 lg:top-full lg:w-44 w-full lg:bg-white z-50">
+                            <li>
+                                <a href="#"
+                                    class=" flex gap-2 block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-70 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-4 my-auto lg:hidden">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                    Undergraduate</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class=" flex gap-2 block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-4 my-auto lg:hidden">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                    Graduate</a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li>
-                        <a href="academic.html" class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700
-                                            ">Academics</a>
+                        <a href="about.html"
+                            class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700">
+                            About
+                        </a>
                     </li>
                     <li>
-                        <a href="about.html" class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700
-                                            ">About</a>
+                        <a href="contact.html"
+                            class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700">
+                            Contact
+                        </a>
                     </li>
                     <li>
-                        <a href="contact.html" class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700
-                                            ">Contact</a>
-                    </li>
-                    <li>
-                        <a href="faq.html" class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700
-                                            ">FAQ</a>
+                        <a href="faq.html"
+                            class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700">
+                            FAQ
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -272,47 +313,56 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const searchPopup = document.getElementById("search-popup");
-        const searchIcon = document.getElementById("search-icon");
-        const closeSearch = document.getElementById("close-search");
+            const searchBar = document.getElementById("search-bar");
+            const searchIcon = document.getElementById("search-icon");
+            const closeSearch = document.getElementById("close-search");
+            const navbar = document.querySelector("nav");
 
-        if (searchIcon && searchPopup && closeSearch) {
-            // console.log("Search icon:", searchIcon);
-            // console.log("Search popup:", searchPopup);
-            // console.log("Close button:", closeSearch);
+            if (searchIcon && searchBar && closeSearch && navbar) {
+                // Click event for search icon
+                searchIcon.addEventListener("click", function (event) {
+                    event.stopPropagation(); // Prevent closing immediately
+                    searchBar.classList.remove("hidden");
+                    searchBar.classList.add("block");
+                    navbar.classList.add("mt-20");
+                });
 
-            // Show search popup when clicking search icon
-            searchIcon.addEventListener("click", function () {
-                // console.log("Search icon clicked!");
-                searchPopup.classList.remove("hidden");
-                document.getElementById("search-form").focus();
+                // Click event for closing the search
+                closeSearch.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    searchBar.classList.add("hidden");
+                    searchBar.classList.remove("block");
+                    navbar.classList.remove("mt-20");
+                });
+
+                searchBar.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                });
+            } else {
+                console.error("Search icon or search bar not found.");
+            }
+        });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const academicsToggle = document.getElementById("academics-toggle");
+        const academicsSubmenu = document.getElementById("academics-submenu");
+
+        if (academicsToggle && academicsSubmenu) {
+            academicsToggle.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevents immediate closing
+                academicsSubmenu.classList.toggle("hidden");
+
+                academicsSubmenu.style.zIndex = "999";
             });
 
-            // Close search popup when clicking (X) button
-            closeSearch.addEventListener("click", function () {
-                // console.log("Close button clicked!");
-                searchPopup.classList.add("hidden");
-            });
-
-            // Prevent closing the popup when clicking inside
-            searchPopup.addEventListener("click", function (event) {
-                if (event.target === searchPopup) {
-                    // console.log("Clicked outside search box, closing popup.");
-                    searchPopup.classList.add("hidden");
+            // Close submenu
+            document.addEventListener("click", function (event) {
+                if (!academicsToggle.contains(event.target) && !academicsSubmenu.contains(event.target)) {
+                    academicsSubmenu.classList.add("hidden");
                 }
             });
-
-            // Handle Enter key in search box
-            document.getElementById("search-form").addEventListener("keypress", function (event) {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    alert("Searching for: " + this.value);
-                    searchPopup.classList.add("hidden");
-                }
-            });
-        } else {
-            console.error("Error");
         }
     });
+
 </script>
 </html>
