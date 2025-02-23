@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="bg-white border-gray-200">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 sm:p-4">
+        <div class="max-w-screen-xxl flex flex-wrap items-center justify-between mx-auto p-2 sm:p-4">
             <a href="" class="flex items-center space-x-3 mt-1 md:mt-0">
                 <img src="./img/rupp.png" alt="" class="h-10 sm:h-12 md:h-16">
                 <div class="flex flex-col text-left items-start text-red-800 uppercase">
@@ -20,7 +20,7 @@
             </a>
 
             <!-- Search -->
-            <div class="flex items-center lg:order-2 space-x-1 lg:space-x-0">
+            <div class="flex items-center 2xl:order-2 space-x-1 lg:space-x-0">
                 <div class="border-r-1 pr-4 cursor-pointer border-gray-400" id="search-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
@@ -34,7 +34,7 @@
                     <span class="hidden lg:block">English (US)</span>
                 </button>
                 <!-- Dropdown -->
-                <div class="absolute left-0 mt-2 z-50 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-12 lg:w-36"
+                <div class="absolute left-0 mt-2 z-50 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-12 2xl:w-36"
                     id="language-dropdown-menu">
                     <ul class="py-2 font-medium" role="none">
                         <li>
@@ -56,7 +56,7 @@
                     </ul>
                 </div>
                 <button data-collapse-toggle="navbar-language" type="button"
-                    class="cursor-pointer inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+                    class="cursor-pointer inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg 2xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
                     aria-controls="navbar-language" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -92,20 +92,20 @@
                 </div>
             </div>
 
-            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto md:order-1 uppercase"
+            <div class="items-center justify-between hidden w-full 2xl:flex 2xl:w-auto lg:order-1 uppercase"
                 id="navbar-language">
                 <ul
-                    class="flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-100 uppercase rounded-lg bg-gray-50 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white">
+                    class="flex flex-col font-medium p-4 2xl:p-0 mt-4 border border-gray-100 uppercase rounded-lg bg-gray-50 2xl:space-x-8 rtl:space-x-reverse 2xl:flex-row 2xl:mt-0 2xl:border-0 2xl:bg-white">
                     <li>
                         <a href="index.html"
-                            class="block py-2 px-3 text-white bg-red-700 rounded-sm lg:bg-transparent lg:text-red-700 lg:p-0"
+                            class="block py-2 px-3 text-white bg-red-700 rounded-sm 2xl:bg-transparent 2xl:text-red-700 2xl:p-0"
                             aria-current="page">Home</a>
                     </li>
 
                     <!-- Academics with dropdown -->
                     <li class="relative">
                         <button id="academics-toggle"
-                            class="flex justify-between items-center w-full py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700 z-50"
+                            class="flex justify-between items-center w-full py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700 z-50"
                             style="text-transform: uppercase;">
                             Academics
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -115,13 +115,13 @@
                         </button>
 
                         <!-- Submenu -->
-                        <ul id="academics-submenu" class="hidden flex mt-2 flex-col lg:border lg:border-gray-200 lg:shadow-lg lg:rounded-md transition-all duration-300
-                                lg:absolute lg:left-0 lg:top-full lg:w-44 w-full lg:bg-white z-50">
+                        <ul id="academics-submenu" class="hidden flex mt-2 flex-col 2xl:border 2xl:border-gray-200 2xl:shadow-lg 2xl:rounded-md transition-all duration-300
+                                2xl:absolute 2xl:left-0 2xl:top-full 2xl:w-44 w-full 2xl:bg-white z-50">
                             <li>
                                 <a href="#"
-                                    class=" flex gap-2 block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-70 ">
+                                    class=" flex gap-2 block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-700 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="size-4 my-auto lg:hidden">
+                                        stroke-width="1.5" stroke="currentColor" class="size-4 my-auto 2xl:hidden">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                                     </svg>
@@ -131,7 +131,7 @@
                                 <a href="#"
                                     class=" flex gap-2 block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="size-4 my-auto lg:hidden">
+                                        stroke-width="1.5" stroke="currentColor" class="size-4 my-auto 2xl:hidden">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                                     </svg>
@@ -140,22 +140,74 @@
                         </ul>
                     </li>
 
+                    <!-- People with dropdown -->
+                    <li class="relative">
+                        <button id="people-toggle"
+                            class="flex justify-between items-center w-full py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700 z-50"
+                            style="text-transform: uppercase;">
+                            People
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4 ml-1 transition-transform duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+
+                        <!-- Submenu -->
+                        <ul id="people-submenu" class="hidden flex mt-2 flex-col 2xl:border 2xl:border-gray-200 2xl:shadow-lg 2xl:rounded-md transition-all duration-300
+                                                2xl:absolute 2xl:left-0 2xl:top-full 2xl:w-44 w-full 2xl:bg-white z-50">
+                            <li>
+                                <a href="#"
+                                    class="flex gap-2 block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-700 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-4 my-auto 2xl:hidden">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                    Faculty
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex gap-2 block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-4 my-auto 2xl:hidden">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                    Staff
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
+                            Research
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
+                            Facilities
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
+                            News
+                        </a>
+                    </li>
                     <li>
                         <a href="about.html"
-                            class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700">
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
                             About
                         </a>
                     </li>
                     <li>
                         <a href="contact.html"
-                            class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700">
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
                             Contact
-                        </a>
-                    </li>
-                    <li>
-                        <a href="faq.html"
-                            class="block py-2 px-3 lg:p-0 text-gray-900 rounded-sm hover:bg-red-100 lg:hover:bg-transparent lg:hover:text-red-700">
-                            FAQ
                         </a>
                     </li>
                 </ul>
@@ -628,6 +680,25 @@
             document.addEventListener("click", function (event) {
                 if (!academicsToggle.contains(event.target) && !academicsSubmenu.contains(event.target)) {
                     academicsSubmenu.classList.add("hidden");
+                }
+            });
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const peopleToggle = document.getElementById("people-toggle");
+        const peopleSubmenu = document.getElementById("people-submenu");
+
+        if (peopleToggle && peopleSubmenu) {
+            peopleToggle.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent immediate closing
+                peopleSubmenu.classList.toggle("hidden");
+            });
+
+            // Close submenu if clicking outside
+            document.addEventListener("click", function (event) {
+                if (!peopleToggle.contains(event.target) && !peopleSubmenu.contains(event.target)) {
+                    peopleSubmenu.classList.add("hidden");
                 }
             });
         }
