@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="scroll-hidden bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white border-gray-200">
+        <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-2 sm:p-4">
+            <a href="" class="flex items-center space-x-3 mt-1 md:mt-0">
+                <img src="./img/rupp.png" alt="" class="h-10 sm:h-12 md:h-16">
+                <div class="flex flex-col text-left items-start text-red-800 uppercase">
+                    <span class="text-xs sm:text-sm md:text-base sm:font-semibold whitespace-nowrap">Faculty of
+                        Science</span>
+                    <span class="text-xs sm:text-sm md:text-base sm:font-semibold whitespace-nowrap">Department of Computer
+                        Science</span>
+                </div>
+            </a>
+
+            <!-- Search -->
+            <div class="flex items-center 2xl:order-2 space-x-1 lg:space-x-0">
+                <div class="border-r-1 pr-4 cursor-pointer border-gray-400" id="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                </div>
+                <button type="button" data-dropdown-toggle="language-dropdown-menu"
+                    class=" inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100">
+                    <img src="./img/us.png" alt="" class="h-5 w-5 me-2">
+                    <span class="hidden lg:block">English (US)</span>
+                </button>
+                <!-- Dropdown -->
+                <div class="absolute left-0 mt-2 z-50 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-12 2xl:w-36"
+                    id="language-dropdown-menu">
+                    <ul class="py-2 font-medium" role="none">
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">
+                                <div class="inline-flex items-center">
+                                    <img src="./img/us.png" alt="" class="h-4 w-4 me-2">
+                                    <span class="hidden lg:block">English (US)</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">
+                                <div class="inline-flex items-center">
+                                    <img src="./img/kh.png" alt="" class="h-4 w-4 me-2">
+                                    <span class="hidden lg:block">Khmer</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button data-collapse-toggle="navbar-language" type="button"
+                    class="cursor-pointer inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg 2xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+                    aria-controls="navbar-language" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Search Fields (with animation) -->
+            <div id="search-bar"
+                class="w-full bg-red-900 p-3 opacity-0 -translate-y-full fixed top-0 left-0 z-50 transition-all duration-500 ease-in-out hidden">
+                <div class="max-w-screen-lg mx-auto flex items-center justify-between">
+                    <!-- Search Input -->
+                    <div class="flex items-center bg-white rounded-full px-3 py-1 w-full max-w-lg mx-auto">
+                        <input type="text" id="search-input" class="w-full px-2 py-1 text-sm outline-none text-gray-900"
+                            placeholder="Search...">
+                        <button class="text-gray-500 hover:text-gray-700">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Close Button -->
+                    <button id="close-search" class="text-white ml-2 hover:text-gray-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="items-center justify-between hidden w-full 2xl:flex 2xl:w-auto lg:order-1 uppercase"
+                id="navbar-language">
+                <ul
+                    class="flex flex-col font-medium p-4 2xl:p-0 mt-4 border border-gray-100 uppercase rounded-lg bg-gray-50 2xl:space-x-8 rtl:space-x-reverse 2xl:flex-row 2xl:mt-0 2xl:border-0 2xl:bg-white">
+                    <li>
+                        <a href="index.html"
+                            class="block py-2 px-3 text-white bg-red-700 rounded-sm 2xl:bg-transparent 2xl:text-red-700 2xl:p-0"
+                            aria-current="page">Home</a>
+                    </li>
+
+                    <!-- Academics Submenu (Display on Hover) -->
+                    <li class="relative group">
+                        <button id="academics-toggle"
+                            class="flex justify-between items-center w-full py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700 z-50"
+                            style="text-transform: uppercase;">
+                            Academics
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4 ml-1 transition-transform duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+
+                        <!-- Submenu -->
+                        <ul id="academics-submenu"
+                            class="absolute left-0 top-full mt-2 opacity-0 scale-95 transform transition-all duration-500 ease-in-out
+                                       group-hover:opacity-100 group-hover:scale-100 w-44 bg-white border border-gray-200 shadow-lg rounded-md z-50">
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-700">
+                                    Undergraduate
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-700">
+                                    Graduate
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- People Submenu (Display on Hover) -->
+                    <li class="relative group">
+                        <button id="people-toggle"
+                            class="flex justify-between items-center w-full py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700 z-50"
+                            style="text-transform: uppercase;">
+                            People
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4 ml-1 transition-transform duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+
+                        <!-- Submenu -->
+                        <ul id="people-submenu"
+                            class="absolute left-0 top-full mt-2 opacity-0 scale-95 transform transition-all duration-500 ease-in-out
+                                       group-hover:opacity-100 group-hover:scale-100 w-44 bg-white border border-gray-200 shadow-lg rounded-md z-50">
+                            <li>
+                                <a href="faculty.html"
+                                    class="block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-700">
+                                    Faculty
+                                </a>
+                            </li>
+                            <li>
+                                <a href="staff.html" class="block px-4 py-2 text-gray-900 hover:bg-red-100 hover:text-red-700">
+                                    Staff
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
+                            Research
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
+                            Facilities
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
+                            News
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html"
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html"
+                            class="block py-2 px-3 2xl:p-0 text-gray-900 rounded-sm hover:bg-red-100 2xl:hover:bg-transparent 2xl:hover:text-red-700">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- People: Faculty -->
+    <div class="container mx-auto my-4 p-4">
+        <div class="flex flex-col lg:flex-row gap-6">
+            <!-- Left side -->
+            <aside class="w-full lg:w-1/4 bg-gray-200 border border-b-2 p-4 shadow-md rounded-lg">
+                <h2 class="text-3xl font-bold my-4 border-b-2 border-gray-100 text-red-700">People</h2>
+                <div class="mb-4 bg-gray-100 rounded-md ">
+                    <h3 class="text-red-700 font-bold p-4">People</h3>
+                    <div class="pl-4 flex items-center space-x-2 p-3 bg-white pointer">
+                        <span class="text-red-600">▶</span>
+                        <a href="#" class="text-red-600 font-bold no-underline">Faculty</a>
+                    </div>
+                    <div class="pl-4 flex items-center space-x-2 p-3 hover:bg-white pointer">
+                        <span class="text-red-600">▶</span>
+                        <a href="#" class="text-red-600 no-underline">Staff</a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right side -->
+            <div class="w-full lg:w-3/4 p-6">
+                <h1 class="text-3xl font-bold text-red-700">People: Faculty</h1>
+
+                <!-- Menu -->
+                <div class="flex space-x-4 mt-4 border-b">
+                    <button class="py-2 px-4 border-b-2 border-red-600 font-semibold text-red-600">Faculty</button>
+                    <button class="py-2 px-4 text-gray-600 hover:text-red-600">Staff</button>
+                </div>
+
+                <!-- Alphabet Filter -->
+                <div class="mt-4 text-gray-600 text-sm">
+                    <span>
+                        <a href="" class="font-bold text-red-600 hover:underline">A</a> |
+                        <a href="" class="font-bold text-red-600 hover:underline">B</a> | ... |
+                        <a href="" class="font-bold text-red-600 hover:underline">Z</a> |
+                    </span>
+                    <span class="font-bold text-red-600">
+                        <a href="" class="font-bold text-red-600 hover:underline">ALL</a>
+                    </span>
+                </div>
+
+                <!-- Table -->
+                <div class="overflow-x-auto mt-4">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-800">
+                                <th class=""></th>
+                                <th class="p-3 font-semibold">Last</th>
+                                <th class="p-3 font-semibold">First</th>
+                                <th class="p-3 font-semibold">Title</th>
+                                <th class="p-3 font-semibold">Location</th>
+                                <th class="p-3 font-semibold">Phone</th>
+                                <th class="p-3 font-semibold">E-mail</th>
+                                <th class="p-3 font-semibold">Web</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td><img src="./img/dr-heng-sovanrith.jpg" class="size-10 mx-auto"></td>
+                                <td class="p-3 flex items-center">Abadi</td>
+                                <td class="p-3 text-red-600">Daniel</td>
+                                <td class="p-3">Professor</td>
+                                <td class="p-3">IRB 5156</td>
+                                <td class="p-3">(301) 405-9695</td>
+                                <td class="p-3"><a href="#" class="text-red-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="size-6 mx-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                                    </svg>
+                                </a></td>
+                                <td class="p-3"><a href="#" class="text-red-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="size-6 mx-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                                    </svg>
+                                </a></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td><img src="./img/dr-heng-sovanrith.jpg" class="size-10 mx-auto"></td>
+                                <td class="p-3 flex items-center">Agrawala</td>
+                                <td class="p-3 text-red-600">Ashok</td>
+                                <td class="p-3">Professor</td>
+                                <td class="p-3">IRB 5204</td>
+                                <td class="p-3">(301) 405-2525</td>
+                                <td class="p-3"><a href="#" class="text-red-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="size-6 mx-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                                    </svg>
+                                </a></td>
+                                <td class="p-3"><a href="#" class="text-red-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="size-6 mx-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                                    </svg>
+                                </a></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td><img src="./img/dr-heng-sovanrith.jpg" class="size-10 mx-auto"></td>
+                                <td class="p-3 flex items-center">Ai</td>
+                                <td class="p-3 text-red-600">Wei</td>
+                                <td class="p-3">Affiliate Assistant Professor</td>
+                                <td class="p-3">ATL 3100</td>
+                                <td class="p-3">(301) 314-1763</td>
+                                <td class="p-3"><a href="#" class="text-red-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="size-6 mx-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                                    </svg>
+                                </a></td>
+                                <td class="p-3"><a href="#" class="text-red-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="size-6 mx-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                                    </svg>
+                                </a></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td><img src="./img/dr-heng-sovanrith.jpg" class="size-10 mx-auto"></td>
+                                <td class="p-3 flex items-center">Alagic</td>
+                                <td class="p-3 text-red-600">Gorjan</td>
+                                <td class="p-3">Affiliate Associate Research Scientist</td>
+                                <td class="p-3">IRB 2222</td>
+                                <td class="p-3">(301) 405-1234</td>
+                                <td class="p-3"><a href="#" class="text-red-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="size-6 mx-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                                    </svg>
+                                </a></td>
+                                <td class="p-3"><a href="#" class="text-red-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                        class="size-6 mx-auto">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                                    </svg>
+                                </a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
