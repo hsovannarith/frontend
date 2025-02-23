@@ -396,44 +396,38 @@
         });
 
     document.addEventListener("DOMContentLoaded", function () {
-        const academicsToggle = document.getElementById("academics-toggle");
-        const academicsSubmenu = document.getElementById("academics-submenu");
+        const menus = [
+            { toggle: "academics-toggle", submenu: "academics-submenu" },
+            { toggle: "people-toggle", submenu: "people-submenu" }
+        ];
 
-        if (academicsToggle && academicsSubmenu) {
-            academicsToggle.addEventListener("click", function (event) {
-                event.stopPropagation(); // Prevents immediate closing
-                academicsSubmenu.classList.toggle("hidden");
+        menus.forEach(({ toggle, submenu }) => {
+            const toggleElement = document.getElementById(toggle);
+            const submenuElement = document.getElementById(submenu);
 
-                academicsSubmenu.style.zIndex = "999";
-            });
+            if (toggleElement && submenuElement) {
+                toggleElement.addEventListener("click", function (event) {
+                    event.stopPropagation(); // Prevent immediate closing
 
-            // Close submenu
-            document.addEventListener("click", function (event) {
-                if (!academicsToggle.contains(event.target) && !academicsSubmenu.contains(event.target)) {
-                    academicsSubmenu.classList.add("hidden");
-                }
-            });
-        }
+                    // Close all other submenus before opening the clicked one
+                    menus.forEach(({ submenu: otherSubmenu }) => {
+                        if (otherSubmenu !== submenu) {
+                            document.getElementById(otherSubmenu).classList.add("hidden");
+                        }
+                    });
+
+                    // Toggle the clicked submenu
+                    submenuElement.classList.toggle("hidden");
+                });
+
+                // Close submenu if clicking outside
+                document.addEventListener("click", function (event) {
+                    if (!toggleElement.contains(event.target) && !submenuElement.contains(event.target)) {
+                        submenuElement.classList.add("hidden");
+                    }
+                });
+            }
+        });
     });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const peopleToggle = document.getElementById("people-toggle");
-        const peopleSubmenu = document.getElementById("people-submenu");
-
-        if (peopleToggle && peopleSubmenu) {
-            peopleToggle.addEventListener("click", function (event) {
-                event.stopPropagation(); // Prevent immediate closing
-                peopleSubmenu.classList.toggle("hidden");
-            });
-
-            // Close submenu if clicking outside
-            document.addEventListener("click", function (event) {
-                if (!peopleToggle.contains(event.target) && !peopleSubmenu.contains(event.target)) {
-                    peopleSubmenu.classList.add("hidden");
-                }
-            });
-        }
-    });
-
 </script>
 </html>

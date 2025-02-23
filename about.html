@@ -634,75 +634,69 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-            const searchBar = document.getElementById("search-bar");
-            const searchIcon = document.getElementById("search-icon");
-            const closeSearch = document.getElementById("close-search");
-            const navbar = document.querySelector("nav");
+        const searchBar = document.getElementById("search-bar");
+        const searchIcon = document.getElementById("search-icon");
+        const closeSearch = document.getElementById("close-search");
+        const navbar = document.querySelector("nav");
 
-            if (searchIcon && searchBar && closeSearch && navbar) {
-                // Click event for search icon
-                searchIcon.addEventListener("click", function (event) {
-                    event.stopPropagation(); // Prevent closing immediately
-                    searchBar.classList.remove("hidden");
-                    searchBar.classList.add("block");
-                    navbar.classList.add("mt-20");
+        if (searchIcon && searchBar && closeSearch && navbar) {
+            // Click event for search icon
+            searchIcon.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevent closing immediately
+                searchBar.classList.remove("hidden");
+                searchBar.classList.add("block");
+                navbar.classList.add("mt-20");
+            });
+
+            // Click event for closing the search
+            closeSearch.addEventListener("click", function (event) {
+                event.stopPropagation();
+                searchBar.classList.add("hidden");
+                searchBar.classList.remove("block");
+                navbar.classList.remove("mt-20");
+            });
+
+            searchBar.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
+        } else {
+            console.error("Search icon or search bar not found.");
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const menus = [
+            { toggle: "academics-toggle", submenu: "academics-submenu" },
+            { toggle: "people-toggle", submenu: "people-submenu" }
+        ];
+
+        menus.forEach(({ toggle, submenu }) => {
+            const toggleElement = document.getElementById(toggle);
+            const submenuElement = document.getElementById(submenu);
+
+            if (toggleElement && submenuElement) {
+                toggleElement.addEventListener("click", function (event) {
+                    event.stopPropagation(); // Prevent immediate closing
+
+                    // Close all other submenus before opening the clicked one
+                    menus.forEach(({ submenu: otherSubmenu }) => {
+                        if (otherSubmenu !== submenu) {
+                            document.getElementById(otherSubmenu).classList.add("hidden");
+                        }
+                    });
+
+                    // Toggle the clicked submenu
+                    submenuElement.classList.toggle("hidden");
                 });
 
-                // Click event for closing the search
-                closeSearch.addEventListener("click", function (event) {
-                    event.stopPropagation();
-                    searchBar.classList.add("hidden");
-                    searchBar.classList.remove("block");
-                    navbar.classList.remove("mt-20");
+                // Close submenu if clicking outside
+                document.addEventListener("click", function (event) {
+                    if (!toggleElement.contains(event.target) && !submenuElement.contains(event.target)) {
+                        submenuElement.classList.add("hidden");
+                    }
                 });
-
-                searchBar.addEventListener("click", function (event) {
-                    event.stopPropagation();
-                });
-            } else {
-                console.error("Search icon or search bar not found.");
             }
         });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const academicsToggle = document.getElementById("academics-toggle");
-        const academicsSubmenu = document.getElementById("academics-submenu");
-
-        if (academicsToggle && academicsSubmenu) {
-            academicsToggle.addEventListener("click", function (event) {
-                event.stopPropagation(); // Prevents immediate closing
-                academicsSubmenu.classList.toggle("hidden");
-
-                academicsSubmenu.style.zIndex = "999";
-            });
-
-            // Close submenu
-            document.addEventListener("click", function (event) {
-                if (!academicsToggle.contains(event.target) && !academicsSubmenu.contains(event.target)) {
-                    academicsSubmenu.classList.add("hidden");
-                }
-            });
-        }
     });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const peopleToggle = document.getElementById("people-toggle");
-        const peopleSubmenu = document.getElementById("people-submenu");
-
-        if (peopleToggle && peopleSubmenu) {
-            peopleToggle.addEventListener("click", function (event) {
-                event.stopPropagation(); // Prevent immediate closing
-                peopleSubmenu.classList.toggle("hidden");
-            });
-
-            // Close submenu if clicking outside
-            document.addEventListener("click", function (event) {
-                if (!peopleToggle.contains(event.target) && !peopleSubmenu.contains(event.target)) {
-                    peopleSubmenu.classList.add("hidden");
-                }
-            });
-        }
-    });
-
 </script>
 </html>
